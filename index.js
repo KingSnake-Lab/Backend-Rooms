@@ -4,8 +4,19 @@ const mysql = require('mysql');
 const app = express();
 
 
-// Resto de tu código Express aquí
+const { test } = require('./Functions/test');
 
-app.listen(3000, () => {
-  console.log('Servidor Express iniciado en el puerto 3000');
+
+// Resto de tu código Express aquí
+app.post('/api/test', async (req, res) => {
+  //Obtener el body
+  //const { email, password } = req.body;
+  console.log("holaa");
+  test(req, res);
+});
+
+
+app.listen(3001, () => {
+ 
+  console.log('Servidor Express iniciado en el puerto 3001');
 });
